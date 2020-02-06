@@ -18,64 +18,64 @@
 This is the default setup:
 
 ```js
-    import metismenu from 'metismenu-vue';
+import metismenu from 'metismenu-vue';
 
-    // Check MetisMenu options: https://github.com/onokumus/metismenujs#options
-    const options = {
-      preventDefault: true,
-      toggle: true
-    };
+// Check MetisMenu options: https://github.com/onokumus/metismenujs#options
+const options = {
+  preventDefault: true,
+  toggle: true
+};
 
-    const menu = [
+const menu = [
+  {
+    text: 'Dashboard',
+    active: true, // optional. MetiMenu will handle the current active element on every click
+    hasArrow: true, // optional. Check MetisMenu plugin usage: https://github.com/onokumus/metismenujs#usage
+    children: [
       {
-        text: 'Dashboard',
-        active: true, // optional. MetiMenu will handle the current active element on every click
-        hasArrow: true, // optional. Check MetisMenu plugin usage: https://github.com/onokumus/metismenujs#usage
+        text: 'Test',
+        href: '/my-test-route'
+      },
+      {
+        text: 'Subchildren',
         children: [
           {
-            text: 'Test',
-            href: '/my-test-route'
+            text: 'Subchild Test',
+            href: '/subchild'
           },
           {
-            text: 'Subchildren',
-            children: [
-              {
-                text: 'Subchild Test',
-                href: '/subchild'
-              },
-              {
-                text: 'Subchild Test 2',
-                href: '/subchild2'
-              }
-            ]
+            text: 'Subchild Test 2',
+            href: '/subchild2'
           }
         ]
-      },
-      {
-        text: 'Blog',
-        href: '/blog'
       }
-    ];
+    ]
+  },
+  {
+    text: 'Blog',
+    href: '/blog'
+  }
+];
 
-    new Vue({
-      template: `
-      <div>
-          <metismenu id="mymenu" :menu="menu" :options="options" class="my-own-class" v-on:mmclick="handleClickEvent" />
-      </div>
-      `,
-      components: {
-        metismenu: metismenu,
-      },
-      data: {
-        menu: menu,
-        options: options
-      },
-      methods: {
-        handleClickEvent(item) {
-          console.log('Item has been clicked!', item)
-        }
-      }
-    }).$mount('#app');
+new Vue({
+  template: `
+  <div>
+      <metismenu id="mymenu" :menu="menu" :options="options" class="my-own-class" v-on:mmclick="handleClickEvent" />
+  </div>
+  `,
+  components: {
+    metismenu: metismenu,
+  },
+  data: {
+    menu: menu,
+    options: options
+  },
+  methods: {
+    handleClickEvent(item) {
+      console.log('Item has been clicked!', item)
+    }
+  }
+}).$mount('#app');
 ```
 
 ## License
