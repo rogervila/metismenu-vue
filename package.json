@@ -1,7 +1,7 @@
 {
   "name": "metismenu-vue",
   "version": "0.1.0",
-  "description": "A MetisMenu jQuery plugin VueJS Wrapper",
+  "description": "A MetisMenu plugin VueJS Wrapper",
   "main": "dist/metismenuvue.umd.min.js",
   "license": "MIT",
   "author": "Roger Vilà <rogervila@me.com>",
