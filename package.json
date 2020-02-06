@@ -1,0 +1,61 @@
+{
+  "name": "metismenu-vue",
+  "version": "0.1.0",
+  "description": "A MetisMenu jQuery plugin VueJS Wrapper",
+  "main": "dist/metismenuvue.umd.min.js",
+  "license": "MIT",
+  "author": "Roger Vilà <rogervila@me.com>",
+  "bugs": {
+    "url": "https://github.com/rogervila/metismenu-vue/issues"
+  },
+  "homepage": "https://github.com/rogervila/metismenu-vue#readme",
+  "scripts": {
+    "test": "cross-env NODE_ENV=test jest --no-cache --coverage",
+    "build": "vue-cli-service build --target lib --name metismenuvue src/metismenu.vue"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rogervila/metismenu-vue.git"
+  },
+  "keywords": [
+    "metismenu",
+    "metismenu-vue"
+  ],
+  "dependencies": {
+    "metismenujs": "^1.1.0",
+    "vue": "^2.6.10"
+  },
+  "devDependencies": {
+    "@vue/cli-service": "^4.1.0",
+    "@vue/test-utils": "^1.0.0-beta.31",
+    "@vue/web-component-wrapper": "^1.2.0",
+    "babel-core": "^6.26.3",
+    "babel-jest": "^25.1.0",
+    "babel-plugin-css-modules-transform": "^1.6.2",
+    "babel-preset-env": "^1.7.0",
+    "cross-env": "^7.0.0",
+    "jest": "^25.1.0",
+    "vue-jest": "^3.0.5",
+    "vue-template-compiler": "^2.6.10"
+  },
+  "jest": {
+    "collectCoverage": true,
+    "coverageReporters": [
+      "lcov",
+      "text"
+    ],
+    "collectCoverageFrom": [
+      "**/*.{js,vue}",
+      "!**/node_modules/**"
+    ],
+    "moduleFileExtensions": [
+      "js",
+      "json",
+      "vue"
+    ],
+    "transform": {
+      "^.+\\.js$": "babel-jest",
+      ".*\\.(vue)$": "vue-jest"
+    }
+  }
+}
