@@ -1,0 +1,16 @@
+language: node_js
+
+node_js:
+  - 13
+
+cache: npm
+
+script:
+  - npm test
+  - sonar-scanner
+
+addons:
+  sonarcloud:
+    organization: "rogervila-github"
+    token: 
+      secure: "b00WCuZd47I/41qFka59j1AajiJlrvxkq4OxUXRplWScsvJMYpP4RqNzIwZ7dqmwK9yZ64M+vjyQzkasUxR7xF3ERJiAwxiJ2uJUE5m4c4wDNYPpI9gTDyDVvifLAuGi8HsVI9fSLa3SrQ4lHmx+xIXhk8XN9hPuH6AgCfqyG8dlPG5BEQnHNYd1HyfgscrPo9miAP9PDfRYlUqxFOmEv+NaQ0dFbP3t/Moj46EfAMALk8JUzj+I5MvrICsSsHQ6kw3lhoq2jvxj/pSVgXl2d7iBL+7k7FyfxSjfNmQ/jnQgnqsuSRwGaTt3Tmhtm6UtavYGlFEgASqjs4Q9+ljf3q6oQz3X5b7r/7N/0tt/YK32HMLD1BYWKtHZx0WeuqRAyFpQqq2wFgUjAMrHVtKH6Kdp2ExHeLqOjTJNRP4C7UScKwiVluP9VkesfHPPr/jXH68VEmg/5k4v9Nx430M/dSvWH/X6QPpRFB260uUVMhj7kJc8Fxq07O/88tsBWH2vog/YzHHl9tq2Agr5SY2PNBUHF1cg08oDgs3B86agFqUVqAKl8aeoEVG2NKebaUO3+QWg0oJqAwTe7TbgcOSC0TNnVQ141m7y4fULj0D9Lwgilr5eMByOfqQIucj6f5N04/LFonZZ8rGPkBZX5NpdrXS6Ay+pKCk3JhDC4afgqHE="

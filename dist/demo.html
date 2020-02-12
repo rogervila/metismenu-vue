@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible"
+    content="ie=edge">
+  <style>
+    [v-cloak]>* {
+      display: none
+    }
+
+    [v-cloak]::before {
+      content: "loading…"
+    }
+  </style>
+  <title>DEMO</title>
+</head>
+
+<body>
+  <div id="test"
+    v-cloak></div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.11/vue.min.js"></script>
+  <script src="./metismenuvue.umd.min.js"></script>
+  <script>
+    const options = {
+      //preventDefault: false,
+      // toggle: false
+    };
+
+    const menu = [
+      {
+        text: 'Dashboard',
+        active: true,
+        hasArrow: true,
+        children: [
+          {
+            text: 'Test',
+            href: '#?test'
+          }
+        ]
+      },
+      {
+        text: 'Other',
+        children: [
+          {
+            text: 'Other Test',
+            href: '#?other',
+            children: [
+              {
+                text: 'Subchild Test',
+                href: '#?subchild'
+              },
+              {
+                text: 'Subchild Test 2',
+                href: '#?subchild2'
+              }
+            ]
+          }
+        ]
+      },
+      {
+        text: 'Simple',
+        href: '#?simple'
+      }
+    ];
+
+    new Vue({
+      template: `
+      <div>
+          <metismenu id="mymenu" :menu="menu" :options="options" class="my-own-class" v-on:mmclick="handleClickEvent" />
+          <button @click="menu.push({text: 'Added element'})">Add menu element</button>
+          <button @click="menu.push({text: 'Added element with children', children: [{'text': 'child element'}]})">Add menu element with children</button>
+      </div>
+      `,
+      components: {
+        metismenu: metismenuvue,
+      },
+      data: {
+        menu: menu,
+        options: options
+      },
+      methods: {
+        handleClickEvent(item) {
+          console.log('Item has been clicked!', item)
+        }
+      }
+    }).$mount('#test');
+  </script>
+</body>
+
+</html>

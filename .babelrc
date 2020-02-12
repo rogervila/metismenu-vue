@@ -1,0 +1,19 @@
+{
+    "env": {
+        "test": {
+            "plugins": [
+                "css-modules-transform"
+            ],
+            "presets": [
+                [
+                    "env",
+                    {
+                        "targets": {
+                            "node": "current"
+                        }
+                    }
+                ]
+            ]
+        }
+    }
+}
