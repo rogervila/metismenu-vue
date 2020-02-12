@@ -1,5 +1,5 @@
 <template>
-    <li :class="{'mm-active' : item.active}">
+    <!-- //NOSONAR --><li :class="{'mm-active' : item.active}">
         <metismenu-link :item="item" />
         <ul v-if="item.children">
             <metismenu-item
